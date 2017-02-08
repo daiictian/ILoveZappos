@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="product" type="com.zappos.databinding.BindingProduct"/>
+        <variable
+            name="presenter"
+            type="com.zappos.databinding.ProductPresenter"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+
+
+        >
+
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ccc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/colorAccent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="5sp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.15"
+                    android:textSize="23sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="@{product.productName}"/>
+
+                <ImageView
+                    android:id="@+id/product"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.35"
+                    android:layout_marginBottom="5sp"
+                    android:layout_gravity="center_vertical"
+                    app:imageUrl="@{product.productImageURL}"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.10"
+                    android:textSize="23sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="@{product.brandName}"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_vertical"
+                        android:text="@{product.price}"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+
+                        android:textSize="20sp"
+                        android:layout_gravity="center_vertical"
+                        android:text="@{product.originalPrice}"
+                        />
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.10"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="25sp"
+                    android:text="@{product.percentOff}"/>
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>
