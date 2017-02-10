@@ -59,13 +59,7 @@ public class MainActivity extends AppCompatActivity{
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "An item has been added to cart", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         if (savedInstanceState == null) {
             f1= HomeFragment.getInstance(MainActivity.this, mProgressDialog);
 
@@ -135,8 +129,8 @@ public class MainActivity extends AppCompatActivity{
                     @Override
                     public boolean onMenuItemActionCollapse(MenuItem menuItem) {
                         // When the action view is collapsed, reset the query
+                        getSupportFragmentManager().popBackStack();
 
-                        // Return true to allow the action view to collapse
                         return true;
                     }
                 });
@@ -148,7 +142,8 @@ public class MainActivity extends AppCompatActivity{
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Toast.makeText(this, "On back pressed", Toast.LENGTH_SHORT).show();
+
+
         if(getSupportFragmentManager().getFragments().size() != 0) {
             getSupportFragmentManager().popBackStack();
         }
