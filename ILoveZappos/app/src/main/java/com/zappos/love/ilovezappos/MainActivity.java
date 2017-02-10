@@ -26,7 +26,6 @@ import com.zappos.objects.Product;
 import com.zappos.objects.Products;
 import com.zappos.objects.SearchItem;
 import com.zappos.ws.client.ZapposRestClient;
-
 import java.util.ArrayList;
 
 import retrofit2.Call;
